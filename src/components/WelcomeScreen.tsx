@@ -59,7 +59,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-xl text-[#cccccc] mb-8"
         >
-          Haiouani Anis - Full Stack Developer
+          Haiouani Anis - AI Engineering 
         </motion.p>
 
         {/* Quick Start */}

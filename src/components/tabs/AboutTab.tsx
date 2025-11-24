@@ -15,21 +15,19 @@ const education = {
 
 const experience = [
   {
-    // Current Internship
     title: "Cyber Security Intern",
     company: "Arcan Networks",
     type: "Internship",
-    period: "2025 - Present",
+    period: "2025 - 2025",
   },
   {
-    // Freelance Work
     title: "Web Developer", 
     type: "Freelance",
     period: "2024 - Present",
   }
 ];`;
 
-  const aboutText = `// About Me\nconst about = "Hi, I'm Haiouani Anis, a passionate Full Stack Developer and AI Engineering student at USTHB. I love building modern web applications, exploring new technologies, and solving real-world problems with code. Welcome to my portfolio!";`;
+  const aboutText = `// About Me\nconst about = "Hi, I'm Haiouani Anis, a passionate Full Stack Developer and AI Engineering student at USTHB. I love building modern web applications, exploring new technologies, and making video games. Welcome to my portfolio!";`;
   const [typedAbout, setTypedAbout] = useState('');
   const [aboutDone, setAboutDone] = useState(false);
 
