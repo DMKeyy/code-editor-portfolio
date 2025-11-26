@@ -1,115 +1,124 @@
-# 🚀 Portfolio | Modern Developer Showcase
+# 💼 VS Code Portfolio
 
-https://dmkey.netlify.app/
+A modern, interactive portfolio website styled as a Visual Studio Code interface. Built with React, TypeScript, and Tailwind CSS, featuring a responsive design that adapts beautifully to all screen sizes.
 
-## 🌟 Overview
+![Portfolio Preview](https://img.shields.io/badge/Portfolio-VS%20Code%20Theme-blue?style=for-the-badge&logo=visualstudiocode)
 
-A modern, VS Code-inspired portfolio website showcasing projects and skills in an interactive IDE-like interface. Built with cutting-edge web technologies for a unique developer experience.
+## 🌟 Features
 
-## ✨ Features
+- **VS Code Interface**: Authentic VS Code-like user interface with tabs, sidebar, and terminal
+- **Responsive Design**: Fully responsive with mobile-optimized navigation
+- **Interactive Navigation**: Browse through About, Projects, and Contact sections like files in an editor
+- **Terminal Simulation**: Includes a working terminal component for that authentic dev experience
+- **Modern UI Components**: Built with Radix UI and shadcn/ui for accessible, customizable components
+- **Smooth Animations**: Powered by Framer Motion for fluid transitions
+- **Dark Theme**: Eye-friendly dark color scheme matching VS Code's dark theme
 
-- 🎯 **VS Code-Inspired Interface** - Familiar developer experience with a modern twist
-- 💻 **Interactive Projects Showcase** - Dynamic project cards with live stats
-- 🛠️ **Skills Visualization** - Code-style representation of technical abilities
-- 📱 **Responsive Design** - Seamless experience across all devices
-- 🌓 **Dark Mode** - Eye-friendly dark theme optimized for developers
+## 🚀 Live Demo
 
-## 🚀 Quick Start
-
-Choose your preferred way to get started:
-
-### 💻 Local Development
-
-Prerequisites:
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- [Git](https://git-scm.com/)
-- [VS Code](https://code.visualstudio.com/) (recommended)
-
-```powershell
-# Clone and install
-git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_NAME>
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
-### ☁️ Cloud Development
-
-#### GitHub Codespaces
-1. Click the green "Code" button
-2. Select "Codespaces"
-3. Launch a new codespace
-4. Start coding in the cloud!
+🔗 **[View Live Portfolio](https://dmkeyy.github.io/Portfolio/)**
 
 ## 🛠️ Tech Stack
 
-<div align="center">
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom animations
+- **UI Components**: Radix UI + shadcn/ui
+- **Routing**: React Router DOM
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Form Handling**: React Hook Form with Zod validation
 
-### Core Technologies
+## 📦 Installation
 
-| Technology | Purpose |
-|------------|---------|
-| [React](https://reactjs.org) | UI Framework |
-| [TypeScript](https://www.typescriptlang.org) | Type Safety |
-| [Vite](https://vitejs.dev) | Build Tool |
-| [Tailwind CSS](https://tailwindcss.com) | Styling |
-| [shadcn/ui](https://ui.shadcn.com) | UI Components |
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/DMKeyy/Portfolio.git
+   cd Portfolio
+   ```
 
-</div>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### Key Features
-- ⚡️ Lightning-fast HMR with Vite
-- 🎨 Utility-first styling with Tailwind
-- 📦 Reusable UI components
-- 🔍 Type-safe development
-- 📱 Mobile-first design
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-## 🚀 Deployment
+4. **Open your browser**
+   Navigate to `http://localhost:8080`
 
-### Quick Deploy
-1. Build your project: `npm run build`
-2. Choose your preferred hosting platform (Vercel, Netlify, GitHub Pages, etc.)
-3. Follow the platform's deployment instructions
-4. Your site is live! 🎉
+## 📜 Available Scripts
 
-### Custom Domain Setup
-1. Purchase a domain from your preferred domain registrar
-2. Configure DNS settings according to your hosting platform's instructions
-3. Set up SSL certificates for secure HTTPS connection
+- `npm run dev` - Start development server on port 8080
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint for code quality
 
-## 📦 Project Structure
+## 📁 Project Structure
 
 ```
-src/
-├── components/          # UI Components
-│   ├── Sidebar         # Navigation sidebar
-│   ├── Terminal        # Interactive terminal
-│   └── tabs/           # Main content tabs
-├── lib/                # Utility functions
-└── pages/              # Route pages
+portfolio/
+├── src/
+│   ├── components/
+│   │   ├── Sidebar.tsx          # VS Code-style sidebar navigation
+│   │   ├── TabBar.tsx           # File tabs component
+│   │   ├── Terminal.tsx         # Terminal simulation
+│   │   ├── VSCodeLayout.tsx     # Main layout component
+│   │   ├── WelcomeScreen.tsx    # Welcome/landing screen
+│   │   ├── tabs/
+│   │   │   ├── AboutTab.tsx     # About section
+│   │   │   ├── ProjectsTab.tsx  # Projects showcase
+│   │   │   └── ContactTab.tsx   # Contact information
+│   │   ├── projects/
+│   │   │   └── ProjectDetail.tsx
+│   │   └── ui/                  # Reusable UI components (shadcn/ui)
+│   ├── hooks/                   # Custom React hooks
+│   ├── lib/                     # Utility functions
+│   ├── pages/                   # Page components
+│   ├── types/                   # TypeScript type definitions
+│   └── App.tsx                  # Root component
+├── public/                      # Static assets
+└── package.json
 ```
+
+## 🎨 Customization
+
+1. **Update About Section**: Edit `src/components/tabs/AboutTab.tsx`
+2. **Add Projects**: Modify `src/components/tabs/ProjectsTab.tsx`
+3. **Change Contact Info**: Update `src/components/tabs/ContactTab.tsx`
+4. **Customize Colors**: Adjust Tailwind configuration in `tailwind.config.ts`
+5. **Add New Tabs**: Create new components in `src/components/tabs/` and update `VSCodeLayout.tsx`
+
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/DMKeyy/Portfolio/issues).
 
-## 📄 License
+## 📝 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**DMKeyy**
+
+- GitHub: [@DMKeyy](https://github.com/DMKeyy)
+- Portfolio: [dmkeyy.github.io/Portfolio](https://dmkeyy.github.io/Portfolio/)
+
+## ⭐ Show your support
+
+Give a ⭐️ if you like this project!
+
+## 🙏 Acknowledgments
+
+- Inspired by Visual Studio Code's interface
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Lucide](https://lucide.dev/)
 
 ---
 
-<div align="center">
-
-Made with ❤️ using React, TypeScript, and Tailwind CSS
-
-</div>
+Built with ❤️ using React and TypeScript
