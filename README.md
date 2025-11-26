@@ -16,7 +16,7 @@ A modern, interactive portfolio website styled as a Visual Studio Code interface
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Portfolio](https://dmkeyy.github.io/Portfolio/)**
+🔗 **[View Live Portfolio](https://dmkey.netlify.app/)**
 
 ## 🛠️ Tech Stack
 
