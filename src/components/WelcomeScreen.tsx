@@ -1,27 +1,40 @@
 import { motion } from 'framer-motion';
 import { FileText, Code, Mail, Github, Linkedin, Folder } from 'lucide-react';
+import { personalInfo, socialLinks, sidebarFiles, welcomeScreenConfig } from '@/data/content';
+
+const getFileIcon = (type: string) => {
+  switch (type) {
+    case 'react':
+      return Code;
+    case 'typescript':
+      return Folder;
+    case 'markdown':
+      return Mail;
+    default:
+      return FileText;
+  }
+};
+
+const getFileColor = (type: string) => {
+  switch (type) {
+    case 'react':
+      return 'text-[#61dafb]';
+    case 'typescript':
+      return 'text-[#3178c6]';
+    case 'markdown':
+      return 'text-[#519aba]';
+    default:
+      return 'text-[#cccccc]';
+  }
+};
 
 const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }) => {
-  const files = [
-    {
-      name: 'about.tsx',
-      icon: Code,
-      color: 'text-[#61dafb]',
-      description: 'Learn about my background and experience'
-    },
-    {
-      name: 'projects.ts',
-      icon: Folder,
-      color: 'text-[#3178c6]',
-      description: 'Explore my projects and work'
-    },
-    {
-      name: 'contact.md',
-      icon: Mail,
-      color: 'text-[#519aba]',
-      description: 'Get in touch with me'
-    }
-  ];
+  const files = sidebarFiles.map(file => ({
+    name: file.name,
+    icon: getFileIcon(file.type),
+    color: getFileColor(file.type),
+    description: file.description,
+  }));
 
   return (
     <div className="flex flex-col items-center justify-center h-full bg-[#1e1e1e] p-8">
@@ -50,7 +63,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-4xl font-bold text-white mb-4"
         >
-          Welcome to my Portfolio
+          {welcomeScreenConfig.title}
         </motion.h1>
         
         <motion.p
@@ -59,7 +72,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-xl text-[#cccccc] mb-8"
         >
-          Haiouani Anis - AI Engineering 
+          {welcomeScreenConfig.subtitle}
         </motion.p>
 
         {/* Quick Start */}
@@ -105,7 +118,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
           className="flex justify-center space-x-4"
         >
           <motion.a
-            href="https://github.com/DMKeyy"
+            href={socialLinks.github.url}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
@@ -115,7 +128,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
             <Github className="w-5 h-5 text-[#cccccc] hover:text-white transition-colors" />
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/haiouani-anis/"
+            href={socialLinks.linkedin.url}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
@@ -125,7 +138,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
             <Linkedin className="w-5 h-5 text-[#cccccc] hover:text-white transition-colors" />
           </motion.a>
           <motion.a
-            href="/my-resume.pdf"
+            href={personalInfo.resumePath}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
@@ -144,7 +157,7 @@ const WelcomeScreen = ({ onTabClick }: { onTabClick: (tabName: string) => void }
           transition={{ duration: 0.5, delay: 1 }}
           className="text-[#858585] text-sm mt-8"
         >
-          💡 Tip: Use the sidebar to explore files, click on the cards above to get started, or open the terminal from the menu bar.
+          {welcomeScreenConfig.tip}
         </motion.p>
       </motion.div>
     </div>

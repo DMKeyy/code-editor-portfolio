@@ -1,33 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { aboutContent, educationExpCodeDisplay } from '@/data/content';
 
 const AboutTab = () => {
   const [lineNumbers, setLineNumbers] = useState<number[]>([]);
   const [typedEducationExp, setTypedEducationExp] = useState('');
 
-  const educationExpText = `// Education & Experience
-const education = {
-  // Current Education
-  institution: "USTHB - University of Science and Technology Houari Boumediene",
-  degree: "Artificial Intelligence Engineer",
-  period: "2023 - Present"
-};
-
-const experience = [
-  {
-    title: "Cyber Security Intern",
-    company: "Arcan Networks",
-    type: "Internship",
-    period: "2025 - 2025",
-  },
-  {
-    title: "Web Developer", 
-    type: "Freelance",
-    period: "2024 - Present",
-  }
-];`;
-
-  const aboutText = `// About Me\nconst about = "Hi, I'm Haiouani Anis, a passionate Full Stack Developer and AI Engineering student at USTHB. I love building modern web applications, exploring new technologies, and making video games. Welcome to my portfolio!";`;
+  const educationExpText = educationExpCodeDisplay;
+  const aboutText = aboutContent.codeDisplay;
   const [typedAbout, setTypedAbout] = useState('');
   const [aboutDone, setAboutDone] = useState(false);
 
