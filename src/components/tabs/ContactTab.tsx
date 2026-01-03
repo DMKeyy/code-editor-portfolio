@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { contactCodeDisplay, contactInfo } from '@/data/content';
 
 const ContactTab = () => {
   const [formData, setFormData] = useState({
@@ -15,14 +16,7 @@ const ContactTab = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const fullText = `// Contact Me
-// Let's build something amazing together!
-
-const Contact = {
-  Email: "haiouani.anis05@gmail.com",
-  Github: "github.com/DMKeyy",
-  Linkedin: "linkedin.com/in/haiouani-anis"
-};`;
+  const fullText = contactCodeDisplay;
 
   useEffect(() => {
     let index = 0;
@@ -59,7 +53,7 @@ const Contact = {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '7812f63a-9749-44e0-9af0-1025abab6e7c', // Replace with your Web3Forms access key
+          access_key: contactInfo.web3formsKey,
           name: formData.name,
           email: formData.email,
           subject: formData.subject,

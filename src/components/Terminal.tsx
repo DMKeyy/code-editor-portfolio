@@ -1,68 +1,33 @@
 import { useState, useEffect, useRef } from 'react';
 import { Terminal as TerminalIcon, Minimize2, X, GripVertical } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { terminalConfig, socialLinks, personalInfo } from '@/data/content';
 
 // Move commands object outside component for better performance
-const COMMANDS = {
-  help: () => [
-    'Available commands:',
-    '  about    - Learn more about me',
-    '  skills   - View my technical skills', 
-    '  projects - See my recent projects',
-    '  contact  - Get my contact information',
-    '  clear    - Clear the terminal',
-    '  github   - Open my GitHub profile',
-    '  resume   - Download my resume',
-    '  echo     - Echo back your input'
-  ],
-  about: () => [
-    'Hello! I\'m Haiouani Anis, a passionate Full Stack Developer',
-    'and AI Engineering student at USTHB. I love building modern',
-    'web applications, exploring new technologies, and solving',
-    'real-world problems with code. Welcome to my portfolio!'
-  ],
-  skills: () => [
-    'Primary Skills:',
-    '• Frontend: React, JavaScript, CSS, HTML, Tailwind CSS',
-    '• Backend: Java, Spring Boot, C#, C',
-    '• Tools: Unity, Sophos Firewall, VMware, VSCode',
-    '• Database: PostgreSQL, MySQL',
-    '• DevOps: Git, GitHub'
-  ],
-  projects: () => [
-    'Recent Projects:',
-    '• Eureka - Educational quiz game (Java, JavaFX, MySQL)',
-    '• Teacher Preference Form - Faculty management system (React, TypeScript, Spring Boot)',
-    '• Medical Office Management - Healthcare system (Java)',
-    '• Gaming Store Web Design - Modern gaming store (HTML, Tailwind CSS, React)',
-    '• Furniture Store Design - Elegant furniture showcase (HTML, Tailwind CSS, React)',
-    'Visit the Projects tab for more details!'
-  ],
-  contact: () => [
-    'Contact Information:',
-    '📧 Email: haiouani.anis05@gmail.com',
-    '💼 LinkedIn: linkedin.com/in/haiouani-anis',
-    '🐙 GitHub: github.com/DMKeyy',
-  ],
+const COMMANDS: Record<string, (args?: string) => string[] | string> = {
+  help: () => terminalConfig.commands.help,
+  about: () => terminalConfig.commands.about,
+  skills: () => terminalConfig.commands.skills,
+  projects: () => terminalConfig.commands.projects,
+  contact: () => terminalConfig.commands.contact,
   clear: () => {
     return 'CLEAR'; // Special flag to indicate clearing the terminal
   },
   github: () => {
-    window.open('https://github.com/DMKeyy', '_blank');
+    window.open(socialLinks.github.url, '_blank');
     return ['Opening GitHub profile in a new tab...'];
   },
   resume: () => {
-    // Replace with actual resume URL
-    const resumeUrl = '/path/to/resume.pdf';
+    const resumeUrl = personalInfo.resumePath;
     const a = document.createElement('a');
     a.href = resumeUrl;
     a.download = 'resume.pdf';
     a.click();
     return ['Downloading resume...'];
   },
-  ls: () => ['about.tsx  projects.ts  skills.json  contact.md  '],
+  ls: () => terminalConfig.commands.ls,
   date: () => [new Date().toLocaleString()],
-  echo: (args: string) => [args || '']
+  echo: (args?: string) => [args || '']
 };
 
 interface TerminalProps {
@@ -81,11 +46,7 @@ const Terminal = ({ onClose }: TerminalProps) => {
   const [startY, setStartY] = useState(0);
   const [terminalHeight, setTerminalHeight] = useState(250);
   const terminalRef = useRef<HTMLDivElement>(null);
-  const [history, setHistory] = useState<string[]>([
-    '$ Welcome to my portfolio terminal!',
-    '$ Type "help" to see available commands',
-    '$ Feel free to explore my work'
-  ]);
+  const [history, setHistory] = useState<string[]>(terminalConfig.welcomeMessages);
   const inputRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -114,11 +75,7 @@ const Terminal = ({ onClose }: TerminalProps) => {
     if (commandFn) {
       let result = commandFn(args.join(' '));
       if (result === 'CLEAR') {
-        setHistory([
-          '$ Welcome to my portfolio terminal!',
-          '$ Type "help" to see available commands',
-          '$ Feel free to explore my work'
-        ]);
+        setHistory(terminalConfig.welcomeMessages);
       } else {
         setHistory(prev => [...prev, `$ ${cmd}`, ...(result || [])]);
       }

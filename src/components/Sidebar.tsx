@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react';
 import { ChevronRight, ChevronDown, Folder, FolderOpen, FileText, Code, Database, Mail, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { sidebarFiles } from '@/data/content';
 
 interface SidebarProps {
   onTabClick: (tabName: string) => void;
@@ -8,14 +9,27 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
+const getFileIcon = (type: string) => {
+  switch (type) {
+    case 'react':
+      return Code;
+    case 'typescript':
+      return FileText;
+    case 'markdown':
+      return Mail;
+    default:
+      return FileText;
+  }
+};
+
 const Sidebar: React.FC<SidebarProps> = ({ onTabClick, activeTab, onClose }) => {
   const [isProjectOpen, setIsProjectOpen] = useState(true);
 
-  const files = [
-    { name: 'about.tsx', icon: Code, type: 'react' },
-    { name: 'projects.ts', icon: FileText, type: 'typescript' },
-    { name: 'contact.md', icon: Mail, type: 'markdown' },
-  ];
+  const files = sidebarFiles.map(file => ({
+    name: file.name,
+    icon: getFileIcon(file.type),
+    type: file.type,
+  }));
 
   return (
     <motion.div 
