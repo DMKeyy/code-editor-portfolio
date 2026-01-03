@@ -125,22 +125,7 @@ const Contact = {
 // PROJECTS
 // ============================================
 export const projects: Project[] = [
-  {
-    id: 6,
-    name: "Othello AI",
-    description: "Intelligent Othello (Reversi) game with AI powered by Minimax and Alpha-Beta Pruning",
-    tech: ["Python", "Pygame", "Minimax Algorithm", "Alpha-Beta Pruning"],
-    github: "https://github.com/DMKeyy/Othello-AI",
-    demo: "#",
-    stars: 9,
-    forks: 0,
-    status: "Completed",
-    lastUpdated: "2025",
-    screenshots: ["/projects/othello-1.png", "/projects/othello-2.png"],
-    detailedDescription: "A sophisticated Othello (Reversi) game implementation featuring multiple AI algorithms. The game includes a graphical interface built with Pygame and offers various play modes including human vs human, human vs AI, and AI vs AI. The AI uses advanced game theory algorithms including Minimax search and Alpha-Beta Pruning for optimal move selection. The evaluation function dynamically adjusts its strategy based on game phase (early/mid/endgame), considering corner control, mobility, piece count, and stable pieces.",
-    features: ["Multiple game modes (Human vs Human, Human vs AI)", "Minimax AI with configurable depth", "Alpha-Beta Pruning optimization", "Dynamic evaluation function", "Visual move highlights and score tracking", "Phase-based strategy adaptation"],
-  },
-  {
+    {
     id: 7,
     name: "VS Code Portfolio",
     description: "Modern VS Code-inspired portfolio website with interactive developer experience",
@@ -169,6 +154,21 @@ export const projects: Project[] = [
     screenshots: ["/projects/morbido-1.png", "/projects/morbido-2.png"],
     detailedDescription: "Morbido is a premium furniture e-commerce platform that combines visual elegance with exceptional user experience. The project features a sophisticated design system with multiple furniture collections including Modern & Minimal, Wabi Harmony, Nordic Calm, Urban Edge, and more. Built with React and TypeScript, the site showcases advanced animations using Framer Motion, custom production options, international imports, and a comprehensive contact system. The platform includes smooth page transitions, interactive product catalogs, customer testimonials, and a fully responsive design optimized for all devices.",
     features: ["Multiple furniture collection catalogs", "Smooth page transitions and animations", "Interactive product detail modals", "Custom production consultation system", "International imports showcase", "Responsive design with mobile-first approach", "Customer testimonials and reviews", "Advanced filtering and search", "Contact forms with multiple channels", "Brand story and values presentation"],
+  },
+  {
+    id: 6,
+    name: "Othello AI",
+    description: "Intelligent Othello (Reversi) game with AI powered by Minimax and Alpha-Beta Pruning",
+    tech: ["Python", "Pygame", "Minimax Algorithm", "Alpha-Beta Pruning"],
+    github: "https://github.com/DMKeyy/Othello-AI",
+    demo: "#",
+    stars: 9,
+    forks: 0,
+    status: "Completed",
+    lastUpdated: "2025",
+    screenshots: ["/projects/othello-1.png", "/projects/othello-2.png"],
+    detailedDescription: "A sophisticated Othello (Reversi) game implementation featuring multiple AI algorithms. The game includes a graphical interface built with Pygame and offers various play modes including human vs human, human vs AI, and AI vs AI. The AI uses advanced game theory algorithms including Minimax search and Alpha-Beta Pruning for optimal move selection. The evaluation function dynamically adjusts its strategy based on game phase (early/mid/endgame), considering corner control, mobility, piece count, and stable pieces.",
+    features: ["Multiple game modes (Human vs Human, Human vs AI)", "Minimax AI with configurable depth", "Alpha-Beta Pruning optimization", "Dynamic evaluation function", "Visual move highlights and score tracking", "Phase-based strategy adaptation"],
   },
   {
     id: 10,
