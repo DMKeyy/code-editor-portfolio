@@ -27,7 +27,7 @@ A modern, interactive portfolio website styled as a Visual Studio Code interface
 - **Routing**: React Router DOM
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Form Handling**: React Hook Form with Zod validation
+- **Form**: Web3Forms
 
 ## 📦 Installation
 
